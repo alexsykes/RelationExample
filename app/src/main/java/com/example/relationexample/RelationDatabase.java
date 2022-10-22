@@ -64,12 +64,18 @@ public abstract class RelationDatabase extends RoomDatabase{
                 productDao.insert(product);
                 product = new Product("Mint with Chamomile", 2);
                 productDao.insert(product);
+                product = new Product("Cornflakes", 3);
+                productDao.insert(product);
+                product = new Product("Wholemeal flour", 3);
+                productDao.insert(product);
+                product = new Product("Black Pepper", 3);
+                productDao.insert(product);
 
                 Supplier supplier = new Supplier(("Sharbatly"));
                 supplierDao.insert(supplier);
                 supplier = new Supplier(("Lipton"));
                 supplierDao.insert(supplier);
-                supplier = new Supplier(("General foodstuffs"));
+                supplier = new Supplier(("General Mills"));
                 supplierDao.insert(supplier);
 
 

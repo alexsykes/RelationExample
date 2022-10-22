@@ -26,6 +26,6 @@ public interface ProductDao {
     @Query("UPDATE products SET stocklevel = stocklevel - 1 WHERE productID = :productID")
     void decrementStockLevel(int productID);
 
-    @Query("SELECT products.*, suppliers.supplierName FROM products JOIN suppliers ON products.supplierID = suppliers.supplierID ORDER BY stocklevel DESC")
+    @Query("SELECT products.*, suppliers.supplierName FROM products JOIN suppliers ON products.supplierID = suppliers.supplierID ORDER BY stocklevel DESC, productName ASC")
     LiveData<List<Product>> getProductDetails();
 }
