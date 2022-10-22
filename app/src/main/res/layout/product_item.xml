@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/productIDTextView"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#004D40"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#004D40" />
+
+    <TextView
+        android:id="@+id/stocklevelTextView"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#004D40" />
+
+    <TextView
+        android:id="@+id/supplierIDTextView"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#004D40" />
+
+    <ImageView
+        android:id="@+id/addImageView"
+        android:layout_width="30sp"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/plus_thick" />
+
+    <ImageView
+        android:id="@+id/subtractImageView"
+        android:layout_width="30sp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/minus_thick" />
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RelationExample</string>
+    <string name="products">Products</string>
+    <string name="suppliers">Suppliers</string>
+</resources>
