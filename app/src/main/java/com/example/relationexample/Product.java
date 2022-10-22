@@ -14,12 +14,15 @@ public class Product {
     @NonNull
     private String productName;
 
+    @NonNull
+    private String supplierName;
     private int supplierID;
     private int stocklevel;
 
     public Product(@NonNull String productName, int supplierID) {
         this.productName = productName;
         this.supplierID = supplierID;
+        this.supplierName = "Dummy Supplier";
         stocklevel = 0;
     }
 
@@ -50,5 +53,14 @@ public class Product {
 
     public void setStocklevel(int stocklevel) {
         this.stocklevel = stocklevel;
+    }
+
+    @NonNull
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(@NonNull String supplierName) {
+        this.supplierName = supplierName;
     }
 }

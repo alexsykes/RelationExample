@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     ProductViewModel productViewModel;
     SupplierViewModel supplierViewModel;
@@ -29,13 +31,15 @@ public class MainActivity extends AppCompatActivity {
         supplierListRV.setAdapter(supplierListAdapter);
         supplierListRV.setLayoutManager(new LinearLayoutManager(this));
 
-        productViewModel.getAllProducts().observe(this, products -> {
+        productViewModel.getProductDetails().observe(this, products -> {
             productListAdapter.submitList(products);
         });
 
         supplierViewModel.getAllSuppliers().observe(this, suppliers -> {
             supplierListAdapter.submitList(suppliers);
         });
+
+//        productDetails = productViewModel.getProductDetails();
     }
 
     public void incrementStockLevel(Product product) {

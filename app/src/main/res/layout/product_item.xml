@@ -24,15 +24,15 @@
         android:textColor="#004D40" />
 
     <TextView
-        android:id="@+id/stocklevelTextView"
-        android:layout_width="30dp"
+        android:id="@+id/supplierNameTextItem"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:textAlignment="textStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#004D40" />
 
     <TextView
-        android:id="@+id/supplierIDTextView"
+        android:id="@+id/stocklevelTextView"
         android:layout_width="30dp"
         android:layout_height="match_parent"
         android:textAlignment="textStart"

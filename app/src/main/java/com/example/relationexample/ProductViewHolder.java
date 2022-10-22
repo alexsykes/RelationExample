@@ -10,14 +10,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder {
-    private final TextView productIDItemView, productNameItemView, supplierIDItemView, stocklevelItemView;
+    private final TextView productIDItemView, productNameItemView, supplierNameTextItem, stocklevelItemView;
     private final ImageView incrementButton, decrementButton;
 
     private ProductViewHolder (View itemView) {
         super(itemView);
         productIDItemView = itemView.findViewById(R.id.productIDTextView);
         productNameItemView = itemView.findViewById(R.id.productNameTextView);
-        supplierIDItemView = itemView.findViewById(R.id.supplierIDTextView);
+        supplierNameTextItem = itemView.findViewById(R.id.supplierNameTextItem);
         incrementButton = itemView.findViewById(R.id.addImageView);
         decrementButton = itemView.findViewById(R.id.subtractImageView);
         stocklevelItemView = itemView.findViewById(R.id.stocklevelTextView);
@@ -26,7 +26,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     public void bind(Product product) {
         productIDItemView.setText(String.valueOf(product.getProductID()));
         productNameItemView.setText(product.getProductName());
-        supplierIDItemView.setText(String.valueOf(product.getSupplierID()));
+        supplierNameTextItem.setText(product.getSupplierName());
         stocklevelItemView.setText(String.valueOf(product.getStocklevel()));
         incrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
