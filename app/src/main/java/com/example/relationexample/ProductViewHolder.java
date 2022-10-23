@@ -23,23 +23,24 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         stocklevelItemView = itemView.findViewById(R.id.stocklevelTextView);
     }
 
-    public void bind(Product product) {
-        productIDItemView.setText(String.valueOf(product.getProductID()));
-        productNameItemView.setText(product.getProductName());
-        supplierNameTextItem.setText(product.getSupplierName());
-        stocklevelItemView.setText(String.valueOf(product.getStocklevel()));
+    public void bind(ProductDetail productDetail) {
+        int productID = productDetail.productID;
+        productIDItemView.setText(String.valueOf(productDetail.productID));
+        productNameItemView.setText(productDetail.productName);
+        supplierNameTextItem.setText(productDetail.supplierName);
+        stocklevelItemView.setText(String.valueOf(productDetail.stocklevel));
         incrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                ((MainActivity) context).incrementStockLevel(product);
+                ((MainActivity) context).incrementStockLevel(productID);
             }
         });
         decrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                ((MainActivity) context).decrementStockLevel(product);
+                ((MainActivity) context).decrementStockLevel(productID);
             }
         });
     }

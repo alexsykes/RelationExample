@@ -17,6 +17,7 @@ public abstract class RelationDatabase extends RoomDatabase{
 
     public abstract ProductDao productDao();
     public abstract SupplierDao  supplierDao();
+    public abstract ProductDetailDao  productDetailDao();
 
     private static volatile RelationDatabase INSTANCE;
     public static final int NUMBER_OF_THREADS = 4;
@@ -70,12 +71,26 @@ public abstract class RelationDatabase extends RoomDatabase{
                 productDao.insert(product);
                 product = new Product("Black Pepper", 3);
                 productDao.insert(product);
+                product = new Product("Sirloin", 4);
+                productDao.insert(product);
+                product = new Product("Cream of Mushroom", 5);
+                productDao.insert(product);
+                product = new Product("Rump", 3);
+                productDao.insert(product);
+                product = new Product("Spring Vegetable", 4);
+                productDao.insert(product);
+                product = new Product("Chicken with Corn", 4);
+                productDao.insert(product);
 
                 Supplier supplier = new Supplier(("Sharbatly"));
                 supplierDao.insert(supplier);
                 supplier = new Supplier(("Lipton"));
                 supplierDao.insert(supplier);
                 supplier = new Supplier(("General Mills"));
+                supplierDao.insert(supplier);
+                supplier = new Supplier(("Barker's Farm"));
+                supplierDao.insert(supplier);
+                supplier = new Supplier(("Maggi"));
                 supplierDao.insert(supplier);
 
 

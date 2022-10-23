@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.ListAdapter;
 
 import java.util.Objects;
 
-public class ProductListAdapter extends ListAdapter<Product, ProductViewHolder> {
+public class ProductListAdapter extends ListAdapter<ProductDetail, ProductViewHolder> {
 
-    public ProductListAdapter(@NonNull DiffUtil.ItemCallback<Product> productItemCallback) {
+    public ProductListAdapter(@NonNull DiffUtil.ItemCallback<ProductDetail> productItemCallback) {
         super(productItemCallback);
     }
 
@@ -21,19 +21,19 @@ public class ProductListAdapter extends ListAdapter<Product, ProductViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        Product product = getItem(position);
+        ProductDetail product = getItem(position);
         holder.bind(product);
     }
 
-    static class ProductDiff extends DiffUtil.ItemCallback<Product> {
+    static class ProductDiff extends DiffUtil.ItemCallback<ProductDetail> {
 
         @Override
-        public boolean areItemsTheSame(@NonNull Product oldItem, @NonNull Product newItem) {
+        public boolean areItemsTheSame(@NonNull ProductDetail oldItem, @NonNull ProductDetail newItem) {
             return true;
         }
 
         @Override
-        public boolean areContentsTheSame(@NonNull Product oldItem, @NonNull Product newItem) {
+        public boolean areContentsTheSame(@NonNull ProductDetail oldItem, @NonNull ProductDetail newItem) {
             return Objects.equals(oldItem, newItem);
         }
     }

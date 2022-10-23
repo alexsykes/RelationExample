@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
     ProductViewModel productViewModel;
     SupplierViewModel supplierViewModel;
@@ -26,27 +24,26 @@ public class MainActivity extends AppCompatActivity {
         productListRV.setAdapter(productListAdapter);
         productListRV.setLayoutManager(new LinearLayoutManager(this));
 
-        RecyclerView supplierListRV = findViewById(R.id.supplierRV);
-        final SupplierListAdapter supplierListAdapter = new SupplierListAdapter(new SupplierListAdapter.SupplierDiff());
-        supplierListRV.setAdapter(supplierListAdapter);
-        supplierListRV.setLayoutManager(new LinearLayoutManager(this));
+//        final SupplierListAdapter supplierListAdapter = new SupplierListAdapter(new SupplierListAdapter.SupplierDiff());
+//        supplierListRV.setAdapter(supplierListAdapter);
+//        supplierListRV.setLayoutManager(new LinearLayoutManager(this));
 
-        productViewModel.getProductDetails().observe(this, products -> {
+        productViewModel.getProductDetailsNew().observe(this, products -> {
             productListAdapter.submitList(products);
         });
 
-        supplierViewModel.getAllSuppliers().observe(this, suppliers -> {
-            supplierListAdapter.submitList(suppliers);
-        });
+//        supplierViewModel.getAllSuppliers().observe(this, suppliers -> {
+//            supplierListAdapter.submitList(suppliers);
+//        });
 
 //        productDetails = productViewModel.getProductDetails();
     }
 
-    public void incrementStockLevel(Product product) {
+    public void incrementStockLevel(int product) {
         productViewModel.increment(product);
     }
 
-    public void decrementStockLevel(Product product) {
+    public void decrementStockLevel(int product) {
         productViewModel.decrement(product);
     }
 }
